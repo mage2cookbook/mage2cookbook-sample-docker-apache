@@ -34,10 +34,7 @@ There is also a Magento 2 clean Docker container https://github.com/mage2cookboo
 
 3. Change the PUBLIC_HOST with your IP or domain name in the command below. It will automatically add the IP of domain to your Magento 2 configuration. 
 
-4. `docker run --rm --name magento2 -it -p 80:80 --link mysql:mysql \
-	-e MYSQL_USER=root -e MYSQL_PASSWORD=admin \
-	-e PUBLIC_HOST=yourdomain.com \
-	raybogman/mage2cookbook-sample-docker $*`
+4. `docker run --rm --name magento2 -it -p 80:80 --link mysql:mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=admin -e PUBLIC_HOST=yourdomain.com raybogman/mage2cookbook-sample-docker $*`
 
 5. Go have a break, this will take some time
 

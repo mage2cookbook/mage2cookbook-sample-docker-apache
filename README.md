@@ -1,4 +1,4 @@
-# Magento 2 CookBook SampleData Docker
+# Magento 2 CookBook Sample Data Docker
 
 This Magento 2 Docker repo is used in the upcoming Magento 2 CookBook by Packtpub Publishing medio 2016
 
@@ -8,12 +8,12 @@ written by: Ray Bogman & Vladimir Kerkhoff
 
 In order to produce this docker repo for Magento 2 I was inspirred by John Willis (Velocity Conf Amsterdam 2015), Alan Kent and Karen Baker.
 
-And not to forget O'Reilly's Andrew Tork Baker for his great Docker video tutorial [http://shop.oreilly.com/product/0636920035732.do](http://)
+And not to forget O'Reilly's Andrew Tork Baker for his great Docker video tutorial http://shop.oreilly.com/product/0636920035732.do
 
 # Manual Changes
 
 The repo is build on the stable Magento 2 data set incl.
-- build docker container and pushed to docker hub [https://hub.docker.com/u/raybogman/](https://)
+- build docker container and pushed to docker hub https://hub.docker.com/u/raybogman/
 - url rewrites enabled
 - cleanup database - to start with a clean db
 - bin/magento indexer:reindex
@@ -21,7 +21,7 @@ The repo is build on the stable Magento 2 data set incl.
 - bin/magento cache:flush
 - bin/magento setup:static-content:deploy
 
-There is also a Magento 2 clean Docker container [https://github.com/mage2cookbook/mage2cookbook-docker-apache](https://)
+There is also a Magento 2 clean Docker container https://github.com/mage2cookbook/mage2cookbook-docker-apache]
 
 - bin/magento sampledata:deploy
 - php /var/www/magento2/composer.phar update

@@ -30,9 +30,7 @@ There is also a Magento 2 clean Docker container https://github.com/mage2cookboo
 
 1. Install Docker (I'm using a DigitalOcean droplet )
 
-2. `docker run -d --name mysql -p 3306:3306 \
-	-e MYSQL_ROOT_PASSWORD=admin \
-	mysql:5.6`
+2. `docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin mysql:5.6`
 
 3. Change the PUBLIC_HOST with your IP or domain name in the command below. It will automatically add the IP of domain to your Magento 2 configuration. 
 

@@ -6,14 +6,14 @@ written by: Ray Bogman & Vladimir Kerkhoff
 
 ## Kudos and Respect
 
-In order to produce this docker repo for Magento 2 I was inspirred by John Willis (Velocity Conf Amsterdam 2015), Alan Kent and Karen Baker.
+In order to produce this Docker repo for Magento 2 I was inspirred by John Willis (Velocity Conf Amsterdam 2015), Alan Kent and Karen Baker.
 
 And not to forget O'Reilly's Andrew Tork Baker for his great Docker video tutorial http://shop.oreilly.com/product/0636920035732.do
 
 # Manual Changes
 
 The repo is build on the stable Magento 2 data set incl.
-- build docker container and pushed to docker hub https://hub.docker.com/u/raybogman/
+- build Docker container and pushed to Docker hub https://hub.docker.com/u/raybogman/
 - url rewrites enabled
 - cleanup database - to start with a clean db
 - bin/magento indexer:reindex

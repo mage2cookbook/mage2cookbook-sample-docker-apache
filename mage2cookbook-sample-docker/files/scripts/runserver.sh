@@ -16,6 +16,7 @@ mysql $MYSQLAUTH -e "CREATE DATABASE IF NOT EXISTS magento2"
 
 cd /var/www/magento2/htdocs
 
+# setup sampledata
 bin/magento sampledata:deploy
 php /var/www/magento2/composer.phar update
 
@@ -31,6 +32,8 @@ bin/magento setup:install \
 		--admin-email=john@doe.com \
 		--admin-user=admin \
 		--admin-password=password123 \
+		--use-rewrites=1 \
+		--cleanup-database \
 
 # Check permissions again
 find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento

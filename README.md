@@ -1,27 +1,53 @@
-# Magento 2 CookBook Docker - Sample Data
+# Magento 2 CookBook SampleData Docker
 
- 
+This Magento 2 Docker repo is used in the upcoming Magento 2 CookBook by Packtpub Publishing medio 2016
+
+written by: Ray Bogman & Vladimir Kerkhoff
+
 ## Kudos and Respect
 
-In order to produce this docker repo for Magento 2 I borrowed heavily from both Alan Kent and Mark Shust.
+In order to produce this docker repo for Magento 2 I was inspirred by John Willis (Velocity Conf Amsterdam 2015), Alan Kent and Karen Baker.
+
+And not to forget O'Reilly's Andrew Tork Baker for his great Docker video tutorial [http://shop.oreilly.com/product/0636920035732.do](http://)
 
 # Manual Changes
 
+The repo is build on the stable Magento 2 data set incl.
+- build docker container and pushed to docker hub [https://hub.docker.com/u/raybogman/](https://)
+- url rewrites enabled
+- cleanup database - to start with a clean db
+- bin/magento indexer:reindex
+- bin/magento cache:clean
+- bin/magento cache:flush
+- bin/magento setup:static-content:deploy
 
-# Pre-Requisites
+There is also a Magento 2 clean Docker container [https://github.com/mage2cookbook/mage2cookbook-docker-apache](https://)
 
-1. Install Docker (I'm on OSX)
-2. Install Docker Compose
-3. Open Docker via Applications->Docker->Terminal
-4. Add docker ip address alias to /etc/hosts e.g. 192.168.99.100 docker.localhost.com
+- bin/magento sampledata:deploy
+- php /var/www/magento2/composer.phar update
 
 # Execution
 
-1. git clone this
-2. In base directory do `docker-compose build`
-3. Go have a cup of tea
-4. When finished do `docker-compose up`
-5. Connect to magento in browser via your docker ip address (you see this when you first load docker terminal window) 
+1. Install Docker (I'm using a DigitalOcean droplet )
+
+2. `docker run -d --name mysql -p 3306:3306 \
+	-e MYSQL_ROOT_PASSWORD=admin \
+	mysql:5.6`
+
+3. Change the PUBLIC_HOST with your IP or domain name in the command below. It will automatically add the IP of domain to your Magento 2 configuration. 
+
+4. `docker run --rm --name magento2 -it -p 80:80 --link mysql:mysql \
+	-e MYSQL_USER=root -e MYSQL_PASSWORD=admin \
+	-e PUBLIC_HOST=yourdomain.com \
+	raybogman/mage2cookbook-sample-docker $*`
+
+5. Go have a break, this will take some time
+
+6. Open your browser en goto the addressed domain name or IP.
+
+As you may see the Apache2 process is working in the FOREGROUND. You can kill it by using CTRL+C on the terminal.
+
+Tip: Open a second terminal window and run `docker exec -it magento2 bash` this allows you to enter the Magento 2 container. All files are located in `/var/www/magento2/htdocs`. To enter the MySQL database use `docker exec -it mysql bash`
 
 
 # Useful Docker commands
@@ -33,6 +59,10 @@ In order to produce this docker repo for Magento 2 I borrowed heavily from both 
   docker exec -it <image_id> bash
 
   docker stop
+
+  docker rm -f $(docker ps -a -q)
+
+  docker rmi -f $(docker images -q)
 
 
 # Notes

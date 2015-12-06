@@ -31,10 +31,6 @@ bin/magento setup:install \
 		--admin-email=john@doe.com \
 		--admin-user=admin \
 		--admin-password=password123 \
-		--language=en_US \
-                --currency=USD  \
-                --timezone=America/Chicago \
-                --use-rewrites=1
 
 # Check permissions again
 find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento

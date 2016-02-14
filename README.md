@@ -1,7 +1,7 @@
 # Magento 2 CookBook Sample Data Docker
 
 This Magento 2 Docker repo is used in the upcoming Magento 2 CookBook by Packtpub Publishing medio 2016
-
+https://mage2cookbook.com/
 written by: Ray Bogman & Vladimir Kerkhoff
 
 ## Kudos and Respect
